@@ -10,5 +10,4 @@ bubble(f0,trig) = os.osc(f) * (exp(-damp*time) : si.smooth(0.99))
 		time = 0 : (select2(trig>trig'):+(1)) ~ _ : ba.samp2sec;
 	};
 
-gate = button("drop");
 process = button("drop") : bubble(hslider("v:freq", 600, 150, 2000, 1)) <: dm.freeverb_demo;
